@@ -1,0 +1,11 @@
+{
+  "seed": 42,
+  "train_rows_per_source": 10000,
+  "synthetic_paths": [
+    "/home/corelabtq/Desktop/FYP/hmda/outputs/ctgan/synthetic.csv",
+    "/home/corelabtq/Desktop/FYP/hmda/outputs/tabddpm/synthetic.csv"
+  ],
+  "real_train": "/home/corelabtq/Desktop/FYP/hmda/data/prepared/train_real.csv",
+  "real_test": "/home/corelabtq/Desktop/FYP/hmda/data/prepared/test_real.csv",
+  "note": "Fixed hyperparameters; preprocessing fitted separately on each training source. Approval is excluded from inputs. Synthetic generators must not have seen the real test set. One seed only; no confidence intervals."
+}

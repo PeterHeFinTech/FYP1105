@@ -1,2 +1,121 @@
-# FYP1105
-HMDA synthetic data generation with TabDDPM and CTGAN
+# HMDA synthetic data: TabDDPM and CTGAN
+
+Both generators use the same prepared split, 13 output columns, and evaluator.
+The directory name `hmda_tabddpm` is retained to preserve the existing virtual
+environment paths. This project contains both models.
+
+## Layout
+
+```text
+hmda_tabddpm/
+├── run.py                 # Single command entry point
+├── src/                   # Model, data preparation and evaluation code
+├── tests/                 # Small functional checks
+├── vendor/                # Official TabDDPM diffusion code and MIT license
+├── requirements/          # Dependency files
+├── data/
+│   ├── raw/               # Original HMDA CSV
+│   └── prepared/          # Shared train/test split and fitted preprocessing
+├── runs/
+│   ├── tabddpm/first/     # Existing checkpoint, config and loss log
+│   └── ctgan/first/       # Existing checkpoint, config and loss log
+├── outputs/
+│   ├── tabddpm/          # synthetic.csv and evaluation/
+│   └── ctgan/            # synthetic.csv, raw output, diagnostics, evaluation/
+├── docs/                  # Model details and reorganization manifest
+└── .venv-ctgan/            # Installed environment; location unchanged
+```
+
+## Use existing trained models
+
+```bash
+cd /home/corelabtq/Desktop/FYP/hmda_tabddpm
+source .venv-ctgan/bin/activate
+python run.py --help
+```
+
+Your previous generated data and reports already exist under `outputs/`.
+To make additional samples without overwriting them:
+
+```bash
+python run.py ctgan sample --device cuda --rows 10000 --seed 124 --out outputs/ctgan/synthetic_seed124.csv
+python run.py evaluate ctgan --synthetic outputs/ctgan/synthetic_seed124.csv --out outputs/ctgan/evaluation_seed124
+python run.py tabddpm sample --device cuda --rows 10000 --seed 124 --out outputs/tabddpm/synthetic_seed124.csv
+python run.py evaluate tabddpm --synthetic outputs/tabddpm/synthetic_seed124.csv --out outputs/tabddpm/evaluation_seed124
+```
+
+CTGAN also saves `.raw.csv` and `.diagnostics.json` alongside each generated CSV.
+Checkpoints, samples and reports refuse to overwrite existing output paths.
+Default model checkpoints point to the existing `first` runs.
+Default paths work from any working directory; explicit relative paths are
+resolved against the directory where you run the command.
+
+## Train another run
+
+Reuse `data/prepared/` for fair comparisons. Do not prepare a new split just to
+switch models. Choose a fresh run name; full training is not started by setup.
+
+```bash
+python run.py ctgan train --device cuda --epochs 300 --out runs/ctgan/second
+python run.py ctgan sample --device cuda --checkpoint runs/ctgan/second/checkpoint.pkl --out outputs/ctgan/synthetic_second.csv
+python run.py evaluate ctgan --synthetic outputs/ctgan/synthetic_second.csv --out outputs/ctgan/evaluation_second
+
+python run.py tabddpm train --device cuda --out runs/tabddpm/second
+python run.py tabddpm sample --device cuda --checkpoint runs/tabddpm/second/checkpoint.pt --out outputs/tabddpm/synthetic_second.csv
+python run.py evaluate tabddpm --synthetic outputs/tabddpm/synthetic_second.csv --out outputs/tabddpm/evaluation_second
+```
+
+For a new experiment needing a different split, use `python run.py prepare
+--top-institutions 507 --out data/prepared_new`, then explicitly pass
+`--data data/prepared_new` to training, sampling and evaluation. Do not mix
+checkpoints and prepared splits. The original preparation default remains the
+ten largest institutions; specify 507 for the complete current CSV.
+
+## Checks and dependencies
+
+```bash
+python run.py check tabddpm
+python run.py check ctgan --device cuda
+```
+
+Checks use temporary outputs; the CTGAN check trains one epoch on fabricated
+records. It does not retrain your HMDA models or assess their statistical quality.
+
+To recreate the CTGAN environment from conda base with working CUDA PyTorch:
+
+```bash
+python -m venv --system-site-packages .venv-ctgan
+.venv-ctgan/bin/python -m pip install -r requirements/ctgan.txt
+```
+
+`requirements/base.txt` records the original TabDDPM dependency guidance.
+Existing environments need no reinstall for this reorganization.
+
+## Evaluation and limitations
+
+`outputs/<model>/evaluation/` contains overall approval and duplication metrics,
+column distributions, institution shares/approval rates, numerical correlations,
+and tail coverage. These are initial fidelity checks, not complete joint fidelity
+or privacy guarantees. No numerical outliers are removed from training.
+Output values use the existing training-range and rounding rules. CTGAN keeps
+raw generated values and adjustment counts for diagnosis. Neither generator
+currently enforces cross-column business rules.
+
+See `docs/tabddpm.md` and `docs/ctgan.md` for model details. The JSON migration
+manifest records old/new locations and SHA-256 digests of preserved data and
+trained artifacts. No training or evaluation results were regenerated by migration.
+
+## Compare synthetic files from any model
+
+The new `benchmark` command accepts arbitrary synthetic CSV paths and always
+compares them with the full fixed raw HMDA CSV:
+
+```bash
+python run.py benchmark outputs/tabddpm/synthetic.csv outputs/ctgan/synthetic.csv --out outputs/benchmark_comparison
+```
+
+Outputs include a comparison CSV and a readable report per input, marginal and
+conditional fidelity, tails, and logistic/random-forest detection scores with
+real-vs-real calibration. This full-reference comparison includes generator
+training records; the older `evaluate` command remains the held-out split check.
+See [evaluation details](docs/evaluation.md) for protocol, options and limits.

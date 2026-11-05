@@ -1,0 +1,3 @@
+file,report,approval_gap,duplicate_fraction,logistic_auc,random_forest_auc
+outputs/tabddpm/synthetic.csv,outputs/benchmark_initial/01_tabddpm_synthetic,0.20131725277318857,0.8674,0.9687789035973623,0.9822409175520646
+outputs/ctgan/synthetic.csv,outputs/benchmark_initial/02_ctgan_synthetic,0.022017252773188556,0.0002,0.7567013170888068,0.8193375333526345

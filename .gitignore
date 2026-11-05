@@ -1,0 +1,6 @@
+
+.venv-ctgan
+runs/
+data/raw/
+data/prepared/
+**/__pycache__/

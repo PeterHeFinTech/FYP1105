@@ -1,0 +1,20 @@
+{
+  "real_test_rows": 6781,
+  "synthetic_rows": 10000,
+  "real_test_approval_rate": 0.7482672172245981,
+  "synthetic_approval_rate": 0.7683,
+  "exact_training_match_fraction": 0.0004,
+  "synthetic_duplicate_fraction": 0.0002,
+  "invalid_categorical_counts": {
+    "lei": 0,
+    "applicant_age": 0,
+    "applicant_sex": 0,
+    "debt_to_income_ratio": 0,
+    "loan_purpose": 0,
+    "loan_type": 0,
+    "occupancy_type": 0,
+    "lien_status": 0,
+    "loanapproved": 0
+  },
+  "notes": "Descriptive fidelity checks, not proof of joint-distribution fidelity or privacy. No classifier is trained."
+}

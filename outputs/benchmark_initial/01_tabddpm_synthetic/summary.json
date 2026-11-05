@@ -1,0 +1,84 @@
+{
+  "reference_path": "/home/corelabtq/Desktop/FYP/hmda_tabddpm/data/raw/hmda_2024_delaware.csv",
+  "synthetic_path": "/home/corelabtq/Desktop/FYP/hmda_tabddpm/outputs/tabddpm/synthetic.csv",
+  "reference_sha256": "d50b670066605da9041870415d7b63d2eb2d51fe1bd35f2f489d2cc7835a1c4f",
+  "synthetic_sha256": "7f28a5003eef9f55051c30e359620a8bedfd1b1aaa6196ddf9e899e79cdb24f6",
+  "reference_scope": "Full fixed HMDA CSV, actions 1/2/3, all institutions. Includes generator training rows.",
+  "real_rows": 33896,
+  "synthetic_rows": 10000,
+  "real_approval_rate": 0.7462827472268114,
+  "synthetic_approval_rate": 0.9476,
+  "approval_rate_absolute_gap": 0.20131725277318857,
+  "synthetic_duplicate_fraction": 0.8674,
+  "real_duplicate_fraction": 0.004572810951144678,
+  "size_matched_real_duplicate_fraction": 0.0022,
+  "exact_full_reference_match_fraction": 0.0,
+  "conditional_groups": [
+    {
+      "group_type": "income_group",
+      "eligible_groups": 5,
+      "real_row_coverage": 1.0,
+      "macro_approval_gap": 0.11398540646348276,
+      "weighted_approval_gap": 0.12768840289566175
+    },
+    {
+      "group_type": "lei",
+      "eligible_groups": 19,
+      "real_row_coverage": 0.29156832664621196,
+      "macro_approval_gap": 0.12679980903178875,
+      "weighted_approval_gap": 0.14692611135374842
+    },
+    {
+      "group_type": "lei+income_group",
+      "eligible_groups": 13,
+      "real_row_coverage": 0.07284045315081425,
+      "macro_approval_gap": 0.13839181080530732,
+      "weighted_approval_gap": 0.18390526044088246
+    }
+  ],
+  "detectors": [
+    {
+      "comparison": "real_vs_real",
+      "model": "logistic",
+      "mean": 0.5044292903477295,
+      "std": 0.012742533397620565,
+      "count": 3
+    },
+    {
+      "comparison": "real_vs_real",
+      "model": "random_forest",
+      "mean": 0.5014320538056126,
+      "std": 0.0054008203988563305,
+      "count": 3
+    },
+    {
+      "comparison": "real_vs_synthetic",
+      "model": "logistic",
+      "mean": 0.9687789035973623,
+      "std": 0.0025117322186581697,
+      "count": 3
+    },
+    {
+      "comparison": "real_vs_synthetic",
+      "model": "random_forest",
+      "mean": 0.9822409175520646,
+      "std": 0.0024790941272484373,
+      "count": 3
+    }
+  ],
+  "settings": {
+    "seed": 42,
+    "repeats": 3,
+    "detector_rows": 5000,
+    "trees": 150,
+    "min_group": 30
+  },
+  "limitations": [
+    "Full-reference similarity, not held-out generator generalization or privacy proof.",
+    "Detector AUC near 0.5 means no distinction found by that detector; near 1 means distinguishable.",
+    "Detector test folds are disjoint by canonical exact-row hash; preprocessing fitted only on detector training folds.",
+    "Repeated-seed standard deviations measure split/sample variability, not formal confidence intervals.",
+    "Group scores omit groups with fewer than min_group valid observations in either dataset; coverage is reported.",
+    "No scalar overall quality score or universal pass threshold; no prediction utility or membership attack is implemented."
+  ]
+}

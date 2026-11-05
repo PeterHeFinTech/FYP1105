@@ -1,0 +1,14 @@
+field,kind,KS,Wasserstein,Wasserstein_over_real_IQR,missing_rate_gap,real_valid,synthetic_valid,TV,unseen_category_fraction
+income,numeric,0.8944062341716671,3202.929608939634,35.98797313415319,0.03566839745102668,31851.0,9040.0,,
+loan_amount,numeric,0.8974042010856739,2488584.377389661,9.954337509558645,0.0,33896.0,10000.0,,
+property_value,numeric,0.7706474600225911,170033536.69808137,739.2762465133973,0.042899386358272396,32208.0,9931.0,,
+loan_term,numeric,0.8236211717943965,267.82820808499247,4.463803468083208,0.02838631106915268,32744.0,9944.0,,
+lei,categorical,,,,,,,0.7595494217606797,0.0
+applicant_age,categorical,,,,,,,0.5281786169459524,0.0
+applicant_sex,categorical,,,,,,,0.3971354732121784,0.0
+debt_to_income_ratio,categorical,,,,,,,0.7564442766108095,0.0
+loan_purpose,categorical,,,,,,,0.49911078593344343,0.0
+loan_type,categorical,,,,,,,0.19252787349539768,0.0
+occupancy_type,categorical,,,,,,,0.7973574935095586,0.0
+lien_status,categorical,,,,,,,0.223992471088034,0.0
+loanapproved,categorical,,,,,,,0.20131725277318857,0.0

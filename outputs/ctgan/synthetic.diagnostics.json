@@ -1,0 +1,29 @@
+{
+  "rows": 10000,
+  "seed": 123,
+  "range_adjustments": {
+    "income": {
+      "numeric_rows": 8866,
+      "below_training_min": 0,
+      "above_training_max": 0
+    },
+    "loan_amount": {
+      "numeric_rows": 10000,
+      "below_training_min": 174,
+      "above_training_max": 0
+    },
+    "property_value": {
+      "numeric_rows": 8918,
+      "below_training_min": 4,
+      "above_training_max": 0
+    },
+    "loan_term": {
+      "numeric_rows": 8809,
+      "below_training_min": 0,
+      "above_training_max": 77
+    }
+  },
+  "raw_duplicate_fraction": 0.0,
+  "decoded_duplicate_fraction": 0.0002,
+  "note": "Same clipping and rounding policy as TabDDPM; raw output retained for diagnosis."
+}

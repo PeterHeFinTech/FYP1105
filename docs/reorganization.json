@@ -1,0 +1,205 @@
+{
+  "verified_before_code_edits": true,
+  "files": [
+    {
+      "old": "hmda.py",
+      "new": "src/hmda.py",
+      "sha256": "07b5d026659eab3b04ef74aa6c3a9d6882154f668088021ea9e99d6572ee3916"
+    },
+    {
+      "old": "hmda_ctgan.py",
+      "new": "src/hmda_ctgan.py",
+      "sha256": "f5d6c73b8b45ab92a8932bdfd9b668760af033861667896166aebcbba07b0a07"
+    },
+    {
+      "old": "model.py",
+      "new": "src/model.py",
+      "sha256": "f339aefecd0d4b2d2854176193131e1f2bd5a525d1957c5bf3dc98ca4a01269b"
+    },
+    {
+      "old": "check.py",
+      "new": "tests/check.py",
+      "sha256": "62073b2779ffb72fcb1e890c0126a2e4faf97ef53998166b45f49de2c19e7cd9"
+    },
+    {
+      "old": "check_ctgan.py",
+      "new": "tests/check_ctgan.py",
+      "sha256": "1a0d2facec7ccc3f48002e1939eb0d4cac1a23342b6137d16f199b1bfd1d0061"
+    },
+    {
+      "old": "requirements.txt",
+      "new": "requirements/base.txt",
+      "sha256": "7c570deccac5f37710c783b81ec9dadca4d052fcac1f3ceb950d688b017c9872"
+    },
+    {
+      "old": "requirements-ctgan.txt",
+      "new": "requirements/ctgan.txt",
+      "sha256": "9f40ca6c7b2a47403c89b1e2d2f390a91155befe6c032a98fb6fa09c8ac66b2b"
+    },
+    {
+      "old": "README.md",
+      "new": "docs/tabddpm.md",
+      "sha256": "f084023d61e4291903d5ed5d8630b3da63466e06ffba6abfa082ffa6dc1b3726"
+    },
+    {
+      "old": "README_CTGAN.md",
+      "new": "docs/ctgan.md",
+      "sha256": "603168a4ce264a76c654528c7698d5bb4e74020527f13575a24fa1d8a06788e8"
+    },
+    {
+      "old": "prepared/metadata.json",
+      "new": "data/prepared/metadata.json",
+      "sha256": "905373f9ea1112b0db9c101f190e044b4b647cdb89d04e2277f00fded1711d9a"
+    },
+    {
+      "old": "prepared/test_real.csv",
+      "new": "data/prepared/test_real.csv",
+      "sha256": "6fe6e05c54c170b9299cf6939eaa5b904c2b380775cddc09a020d12606bc5302"
+    },
+    {
+      "old": "prepared/train.npy",
+      "new": "data/prepared/train.npy",
+      "sha256": "fd157259790cec7fccaa2355ec1b5afa50d1595ee6574ddec4b18fa52b3b0198"
+    },
+    {
+      "old": "prepared/train_real.csv",
+      "new": "data/prepared/train_real.csv",
+      "sha256": "e58cb91d6b140d9f085d01370fc56097f96ae892cd2ffe6b83225f9b8cd350b2"
+    },
+    {
+      "old": "prepared/transformer.pkl",
+      "new": "data/prepared/transformer.pkl",
+      "sha256": "cec2db5aaae6734be6a6dbf74cc5a3a6a4d7402d5482bbfaa5801cdb426918e4"
+    },
+    {
+      "old": "runs/first/checkpoint.pt",
+      "new": "runs/tabddpm/first/checkpoint.pt",
+      "sha256": "48b6de85b407b744ca0320de15b4ecb3d9e446beefab153da0fdde1d9499e7b8"
+    },
+    {
+      "old": "runs/first/config.json",
+      "new": "runs/tabddpm/first/config.json",
+      "sha256": "20716fc24db23e8d5e9d7ee5d0b2560d39ddeaebedea30df6ff5f60fb956895f"
+    },
+    {
+      "old": "runs/first/loss.csv",
+      "new": "runs/tabddpm/first/loss.csv",
+      "sha256": "d7d98c22ac0bf5cd101d7af2439deca9f05d021375cc472bccdd33faee7740a7"
+    },
+    {
+      "old": "runs/ctgan_first/checkpoint.pkl",
+      "new": "runs/ctgan/first/checkpoint.pkl",
+      "sha256": "1f3494361689fab9fd057345603bca71ed57cbebab4cb904f7554c2bf3425421"
+    },
+    {
+      "old": "runs/ctgan_first/config.json",
+      "new": "runs/ctgan/first/config.json",
+      "sha256": "a26a7f27b6e2cb8375a3af2e52b9dca923f92ec571cee78d0514fe174bc281ce"
+    },
+    {
+      "old": "runs/ctgan_first/loss.csv",
+      "new": "runs/ctgan/first/loss.csv",
+      "sha256": "d42175dc715d11118b9712c5645238f441a7a5d5128feebc477eefdda7472b3f"
+    },
+    {
+      "old": "synthetic.csv",
+      "new": "outputs/tabddpm/synthetic.csv",
+      "sha256": "7f28a5003eef9f55051c30e359620a8bedfd1b1aaa6196ddf9e899e79cdb24f6"
+    },
+    {
+      "old": "synthetic_ctgan.csv",
+      "new": "outputs/ctgan/synthetic.csv",
+      "sha256": "5678a64c153eae55fa9727051bb334ac70df8a8bb09b903526f075a5843639b4"
+    },
+    {
+      "old": "synthetic_ctgan.raw.csv",
+      "new": "outputs/ctgan/synthetic.raw.csv",
+      "sha256": "8bf20e66d58b2e5a777937caa368898ce37f3a8b419d26aabd027528fa6c6be7"
+    },
+    {
+      "old": "synthetic_ctgan.diagnostics.json",
+      "new": "outputs/ctgan/synthetic.diagnostics.json",
+      "sha256": "5b5fc4ce0a17ad606604ef98d3e180fd41c8d73d431eb56d9b77afae26b07b04"
+    },
+    {
+      "old": "evaluation/institution_rates.csv",
+      "new": "outputs/tabddpm/evaluation/institution_rates.csv",
+      "sha256": "cd78c49352a038d4c944aa28258e795827c911bffc25ee27fcab992e4a107217"
+    },
+    {
+      "old": "evaluation/marginals.csv",
+      "new": "outputs/tabddpm/evaluation/marginals.csv",
+      "sha256": "ccc181802903a9ccfc5876c9c4d77e83086c194d98edea9897f00f0353eb2b19"
+    },
+    {
+      "old": "evaluation/quantiles.csv",
+      "new": "outputs/tabddpm/evaluation/quantiles.csv",
+      "sha256": "13c6613f8cd036ed6c389331bfc620debe29c3fdea83ae1ea8c16951f3879834"
+    },
+    {
+      "old": "evaluation/spearman_difference.csv",
+      "new": "outputs/tabddpm/evaluation/spearman_difference.csv",
+      "sha256": "bc31c1b917ae9722d798ead4bef194c1ce89619b283f36d21a81be7812fd2b80"
+    },
+    {
+      "old": "evaluation/summary.json",
+      "new": "outputs/tabddpm/evaluation/summary.json",
+      "sha256": "b436ecd8c0c71912abff428a29c5d4e1cbf2cd3943e15f35fb6939c6e38c1a75"
+    },
+    {
+      "old": "evaluation/tail_coverage.csv",
+      "new": "outputs/tabddpm/evaluation/tail_coverage.csv",
+      "sha256": "b678f5c3c4f1f56f4887df3491ab61543be1f499391268bd9ba4ff9fca94a774"
+    },
+    {
+      "old": "evaluation_ctgan/institution_rates.csv",
+      "new": "outputs/ctgan/evaluation/institution_rates.csv",
+      "sha256": "4bb8aee2d0c90aacf4642f2740bd5efe28b5fcd0e857bde118b180beae1fcea7"
+    },
+    {
+      "old": "evaluation_ctgan/marginals.csv",
+      "new": "outputs/ctgan/evaluation/marginals.csv",
+      "sha256": "84d95c7bd8c345b9be64395e191394577d71e34cc29ce88a8c330f721a783f26"
+    },
+    {
+      "old": "evaluation_ctgan/quantiles.csv",
+      "new": "outputs/ctgan/evaluation/quantiles.csv",
+      "sha256": "948bfa55c4f4960cd52f7b87c67c0c18f62fcb48cc80882c6cd92c3dc5de5580"
+    },
+    {
+      "old": "evaluation_ctgan/spearman_difference.csv",
+      "new": "outputs/ctgan/evaluation/spearman_difference.csv",
+      "sha256": "04a43266980a7082c5b33d0ce17fe5a26a649f7fa3d3bb7ccc21590e7a5e4584"
+    },
+    {
+      "old": "evaluation_ctgan/summary.json",
+      "new": "outputs/ctgan/evaluation/summary.json",
+      "sha256": "1f3846a9f5d40038226c5d8d8c2844a52762a0997d27dc4dd50203187ddce829"
+    },
+    {
+      "old": "evaluation_ctgan/tail_coverage.csv",
+      "new": "outputs/ctgan/evaluation/tail_coverage.csv",
+      "sha256": "eca5d54d1100560446fdee1d15f49bb9542e7a80ef390fee6749abc39d90534c"
+    },
+    {
+      "old": "../hmda_2024_delaware.csv",
+      "new": "data/raw/hmda_2024_delaware.csv",
+      "sha256": "d50b670066605da9041870415d7b63d2eb2d51fe1bd35f2f489d2cc7835a1c4f"
+    },
+    {
+      "old": "__pycache__/hmda.cpython-313.pyc",
+      "new": "src/__pycache__/hmda.cpython-313.pyc",
+      "sha256": "a8e669ebeb61ed1a26611b15df97253681828140ebf4a09076d6fb61c2a095f5"
+    },
+    {
+      "old": "__pycache__/hmda_ctgan.cpython-313.pyc",
+      "new": "src/__pycache__/hmda_ctgan.cpython-313.pyc",
+      "sha256": "e5efc02ece61a0f2187d1007f66e5b48e20668c03ffd3988c7f4a227de1e7d20"
+    },
+    {
+      "old": "__pycache__/model.cpython-313.pyc",
+      "new": "src/__pycache__/model.cpython-313.pyc",
+      "sha256": "dd86da26532eae3b666aeb445a48efab9bd0eceb0f102b674615d164bbd50d62"
+    }
+  ]
+}
