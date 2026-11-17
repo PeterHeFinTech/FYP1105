@@ -1,0 +1,61 @@
+{
+  "epochs": 300,
+  "training_seed": 42,
+  "sampling_seed": 123,
+  "training_counts": {
+    "1": 20222,
+    "0": 6893
+  },
+  "synthetic_denied": 2542,
+  "diagnostics": {
+    "0": {
+      "income": {
+        "numeric_rows": 2210,
+        "below_training_min": 0,
+        "above_training_max": 0
+      },
+      "loan_amount": {
+        "numeric_rows": 2542,
+        "below_training_min": 4,
+        "above_training_max": 0
+      },
+      "property_value": {
+        "numeric_rows": 2253,
+        "below_training_min": 10,
+        "above_training_max": 0
+      },
+      "loan_term": {
+        "numeric_rows": 2267,
+        "below_training_min": 5,
+        "above_training_max": 33
+      }
+    },
+    "1": {
+      "income": {
+        "numeric_rows": 6153,
+        "below_training_min": 0,
+        "above_training_max": 0
+      },
+      "loan_amount": {
+        "numeric_rows": 7458,
+        "below_training_min": 35,
+        "above_training_max": 0
+      },
+      "property_value": {
+        "numeric_rows": 6684,
+        "below_training_min": 3,
+        "above_training_max": 0
+      },
+      "loan_term": {
+        "numeric_rows": 6789,
+        "below_training_min": 0,
+        "above_training_max": 26
+      }
+    }
+  },
+  "fingerprint": {
+    "metadata.json": "905373f9ea1112b0db9c101f190e044b4b647cdb89d04e2277f00fded1711d9a",
+    "train_real.csv": "e58cb91d6b140d9f085d01370fc56097f96ae892cd2ffe6b83225f9b8cd350b2"
+  },
+  "note": "Exploratory experiment after inspecting test results; final confirmation requires a fresh holdout and multiple seeds."
+}

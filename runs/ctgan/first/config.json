@@ -1,0 +1,11 @@
+{
+  "epochs": 300,
+  "batch_size": 500,
+  "pac": 10,
+  "seed": 42,
+  "device": "cuda",
+  "ctgan": "0.13.0",
+  "torch": "2.10.0+cu130",
+  "training_rows": 27115,
+  "preprocessing": "CTGAN native mixture normalization; median plus categorical missing status"
+}

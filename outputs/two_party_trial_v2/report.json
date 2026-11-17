@@ -1,0 +1,46 @@
+{
+  "architecture": "conditional split GAN with aligned client encoders and joint discriminator",
+  "shared": [
+    "derived_race",
+    "derived_ethnicity",
+    "applicant_sex",
+    "applicant_age",
+    "income",
+    "loan_amount"
+  ],
+  "party_a_private": [
+    "loan_type",
+    "loan_purpose",
+    "interest_rate",
+    "total_points_and_fees",
+    "total_loan_costs",
+    "discount_points",
+    "origination_charges"
+  ],
+  "party_b_private": [
+    "census_tract",
+    "property_value"
+  ],
+  "condition": "action_taken",
+  "labels": [
+    "1",
+    "2",
+    "3"
+  ],
+  "excluded_action_counts": {},
+  "train_rows": 27116,
+  "test_rows": 6780,
+  "synthetic_rows": 10000,
+  "duplicate_fraction": 0.0,
+  "exact_training_match_fraction": 0.0,
+  "seed": 42,
+  "epochs": 100,
+  "device": "cuda",
+  "limitations": [
+    "Single-process split-learning simulation; intermediate activations and gradients may leak information.",
+    "Local preprocessing uses training data only; schemas/categories exposed by design.",
+    "No differential privacy, secure aggregation, or deployment isolation.",
+    "Different schema and split from earlier binary experiments; metrics are not directly comparable.",
+    "Interest/fee availability may reveal outcome; do not treat downstream prediction as prospective underwriting."
+  ]
+}

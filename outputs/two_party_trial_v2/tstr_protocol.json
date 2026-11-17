@@ -1,0 +1,30 @@
+{
+  "train_rows_per_source": 10000,
+  "test_rows": 6780,
+  "seed": 42,
+  "approved_actions": [
+    "1",
+    "2"
+  ],
+  "denied_actions": [
+    "3"
+  ],
+  "features": [
+    "derived_race",
+    "derived_ethnicity",
+    "applicant_sex",
+    "applicant_age",
+    "income",
+    "loan_amount",
+    "loan_type",
+    "loan_purpose",
+    "interest_rate",
+    "total_points_and_fees",
+    "total_loan_costs",
+    "discount_points",
+    "origination_charges",
+    "census_tract",
+    "property_value"
+  ],
+  "note": "Central evaluator joins aligned real training partitions for baseline only. Includes potentially post-decision fields; measures synthetic utility, not prospective underwriting."
+}
