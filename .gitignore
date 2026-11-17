@@ -4,3 +4,8 @@ runs/
 data/raw/
 data/prepared/
 **/__pycache__/
+outputs/**/party_*_train.csv
+outputs/**/heldout.csv
+outputs/**/*.pt
+outputs/**/synthetic*.csv
+!/outputs/federated_full/synthetic.csv
